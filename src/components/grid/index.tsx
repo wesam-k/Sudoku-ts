@@ -32,50 +32,55 @@ const Grid: FC = () => {
 
   const fill = useCallback(
     (n: NUMBERS) => {
-      if (state.selectedBlock && state.selectedValue === 0)
+      if (state.selectedBlock && state.selectedValue === 0) {
         dispatch(fillBlock(n, state.selectedBlock))
+      }
     },
     [dispatch, state.selectedBlock, state.selectedValue]
   )
 
   function moveDown() {
-    if (state.selectedBlock && state.selectedBlock[0] < 8)
+    if (state.selectedBlock && state.selectedBlock[0] < 8) {
       dispatch(
         selectBlock([
           (state.selectedBlock[0] + 1) as INDEX,
           state.selectedBlock[1],
         ])
       )
+    }
   }
 
   function moveLeft() {
-    if (state.selectedBlock && state.selectedBlock[1] > 0)
+    if (state.selectedBlock && state.selectedBlock[1] > 0) {
       dispatch(
         selectBlock([
           state.selectedBlock[0],
           (state.selectedBlock[1] - 1) as INDEX,
         ])
       )
+    }
   }
 
   function moveRight() {
-    if (state.selectedBlock && state.selectedBlock[1] < 8)
+    if (state.selectedBlock && state.selectedBlock[1] < 8) {
       dispatch(
         selectBlock([
           state.selectedBlock[0],
           (state.selectedBlock[1] + 1) as INDEX,
         ])
       )
+    }
   }
 
   function moveUp() {
-    if (state.selectedBlock && state.selectedBlock[0] > 0)
+    if (state.selectedBlock && state.selectedBlock[0] > 0) {
       dispatch(
         selectBlock([
           (state.selectedBlock[0] - 1) as INDEX,
           state.selectedBlock[1],
         ])
       )
+    }
   }
 
   useMousetrap('1', () => fill(1))
