@@ -17,13 +17,11 @@ function fillGrid(grid: GRID) {
   for (let i = 0; i < 81; i++) {
     row = Math.floor(i / 9)
     col = i % 9
-/* eslint-disable */
-/**
- * eslint prefer-const not let 
- */
+
     if (grid[row][col] === 0) {
       shuffle(numbers)
-
+      
+      // eslint-disable-next-line prefer-const-let
       for (let value of numbers) {
         if (!isInRow({ grid, row, value })){
           if (!isInCol({ col, grid, value })) {

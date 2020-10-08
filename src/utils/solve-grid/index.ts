@@ -15,13 +15,10 @@ function solveGrid(grid: GRID) {
   let col = 0;
 
   for (let i = 0; i < 81; i++) {
-    row = Math.floor(i / 9);
     col = i % 9;
-    /* eslint-disable */
-    /**
-     * eslint prefer-const not let
-     */
+    row = Math.floor(i / 9);
     if (grid[row][col] === 0) {
+      // eslint-disable-next-line prefer-const
       for (let value of numbers) {
         if (!isInRow({ grid, row, value })) {
           if (!isInCol({ col, grid, value })) {
