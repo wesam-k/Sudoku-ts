@@ -1,4 +1,4 @@
-import { GRID } from 'typings'
+import { GRID } from '../../../typings'
 
 import isInCol from './'
 

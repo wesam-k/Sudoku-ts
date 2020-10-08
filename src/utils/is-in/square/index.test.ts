@@ -1,4 +1,4 @@
-import { SQUARE } from 'typings'
+import { SQUARE } from '../../../typings'
 
 import isInSquare from './'
 

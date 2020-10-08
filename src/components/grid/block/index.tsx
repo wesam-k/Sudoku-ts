@@ -14,25 +14,33 @@ interface IProps {
 interface IState {
   value: N
   isActive: boolean
+  isPuzzle: boolean
 }
 
 const Block: FC<IProps> = ({ colIndex, rowIndex }) => {
-  const state= useSelector<IReducer,IState>(({workingGrid, selectedBlock }) =>({
+  const state= useSelector<IReducer,IState>(({workingGrid, selectedBlock,challengeGrid }) =>({
     isActive: selectedBlock ? selectedBlock[0] === rowIndex && selectedBlock[1] === colIndex : false ,
+    isPuzzle:
+        challengeGrid && challengeGrid[rowIndex][colIndex] !== 0 ? true : false,
     value: workingGrid ? workingGrid[rowIndex][colIndex] : 0,
   }))
 
 const dispatch = useDispatch<Dispatch<AnyAction>>()
 
-function handleClick(){
-  if (!state.isActive) dispatch(selectBlock([rowIndex,colIndex]))
+function handleClick() {
+  if (!state.isActive) {
+    dispatch(selectBlock([rowIndex,colIndex]))
+  }
 }
-  return <Container 
+  return (<Container 
   active={state.isActive} 
   data-cy={`block-${rowIndex}-${colIndex}`} 
-  onClick={handleClick}>
+  onClick={handleClick}
+  puzzle={state.isPuzzle}
+  >
     {state.value === 0 ? '' : state.value}
   </Container>
+  )
 }
 
 export default Block

@@ -28,8 +28,9 @@ const NumberButton: FC<IProps> = ({ value }) => {
   const dispatch = useDispatch<Dispatch<AnyAction>>()
 
   const fill = useCallback(() => {
-    if (state.selectedBlock && state.selectedValue === 0)
+    if (state.selectedBlock && state.selectedValue === 0) {
       dispatch(fillBlock(value, state.selectedBlock))
+    }
   }, [dispatch, state.selectedBlock, state.selectedValue, value])
 
   return <Button onClick={fill}>{value}</Button>

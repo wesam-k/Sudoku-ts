@@ -3,8 +3,8 @@ import useMousetrap from 'react-hook-mousetrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { AnyAction, Dispatch } from 'redux'
 
-import { createGrid, IReducer, selectBlock, fillBlock } from 'reducers'
-import { BLOCK_COORDS, GRID, INDEX, N, NUMBERS } from 'typings'
+import { createGrid, IReducer, selectBlock, fillBlock } from '../../reducers'
+import { BLOCK_COORDS, GRID, INDEX, N, NUMBERS } from '../../typings'
 
 import Block from './block'
 import { Container, Row } from './styles'
@@ -37,7 +37,7 @@ const Grid: FC = () => {
       }
     },
     [dispatch, state.selectedBlock, state.selectedValue]
-  )
+  );
 
   function moveDown() {
     if (state.selectedBlock && state.selectedBlock[0] < 8) {
@@ -48,7 +48,7 @@ const Grid: FC = () => {
         ])
       )
     }
-  }
+  };
 
   function moveLeft() {
     if (state.selectedBlock && state.selectedBlock[1] > 0) {
@@ -98,7 +98,9 @@ const Grid: FC = () => {
   useMousetrap('up', moveUp)
 
   useEffect(() => {
-    if (!state.solvedGrid) create()
+    if (!state.solvedGrid) {
+      create()
+    }
   }, [create, state.solvedGrid])
 
   return (

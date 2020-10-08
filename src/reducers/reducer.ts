@@ -1,17 +1,17 @@
 import { AnyAction } from 'redux'
-import { GRID } from 'typings'
+import { GRID } from '../typings'
 
-import { createFullGrid, removeNumber, copyGrid, compareArrays, } from 'utils'
+import { createFullGrid, removeNumber, copyGrid, compareArrays, } from '../utils'
 
 import { IReducer } from './interfaces'
-import * as types from './types'
+import * as types from './types' 
 
 
 const initialState: IReducer = {}
 
-function reducer(state= initialState, action: AnyAction) {
+function reducer(state = initialState, action: AnyAction): IReducer {
     switch(action.type){
-        case types.CREATE_GRID:
+        case types.CREATE_GRID: {
             const solvedGrid = createFullGrid()
             const gridCopy = copyGrid(solvedGrid)
             const challengeGrid = removeNumber(gridCopy)
@@ -22,17 +22,17 @@ function reducer(state= initialState, action: AnyAction) {
                 solvedGrid,
                 workingGrid
             }
-
+}
             case types.FILL_BLOCK: {
             if( state.workingGrid && state.solvedGrid) {
              if (state.solvedGrid[action.coords[0]][action.coords[1]] !== action.value){
-                alert(' Incorrect Option d') 
+                alert(' Incorrect Option ') 
                 return state
              }
             state.workingGrid[action.coords[0]][action.coords[1]] = action.value
-            if(compareArrays(state.workingGrid, state.solvedGrid) )
+            if(compareArrays(state.workingGrid, state.solvedGrid) ){
             alert('Completed')
-
+            }
             return { ...state, workingGrid: [...state.workingGrid] as GRID}
         }
         return state
@@ -44,6 +44,7 @@ function reducer(state= initialState, action: AnyAction) {
             return state
     
 }
+
 }
 
 

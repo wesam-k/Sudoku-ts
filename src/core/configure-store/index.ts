@@ -4,7 +4,7 @@ import { persistStore, persistReducer} from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 
 
-import reducer from 'reducers'
+import reducer from '../../reducers'
 
 
 const persistConfig= {
@@ -13,10 +13,10 @@ const persistConfig= {
 }
 
 const persistedReducer = persistReducer(persistConfig , reducer)
-function configureStore(){
+function configureStore() {
     const store = createStore(
         persistedReducer,
-        devToolsEnhancer({}),
+        devToolsEnhancer({})
     )
     const persistor = persistStore(store)
 

@@ -17,7 +17,7 @@ export const Container = styled.div<IProps>`
     flex-shrink: 0;
     flex-basis: 0;
     font-size: 20px;
-    font-weight: ${'puzzle' ? 'bold' : 'normal'};
+    font-weight: ${puzzle ? 'bold' : 'normal'};
     height: auto;
     justify-content: center;
     transition: ${theme.transition};

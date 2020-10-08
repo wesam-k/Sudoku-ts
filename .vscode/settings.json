@@ -6,5 +6,8 @@
     "source.fixAll": true
   },
   "javascript.format.enable": false,
-  "material-icon-theme.activeIconPack": "react_redux"
+  "material-icon-theme.activeIconPack": "react_redux",
+
+  
+  
 }
