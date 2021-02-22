@@ -3,5 +3,9 @@
     "plugins": ["@typescript-eslint"],
     "extends": [
       "plugin:@typescript-eslint/recommended"
-    ]
+    ],
+    "rules": {
+      "prefer-let/prefer-let": 2,
+      "prefer-const": "off"
+  }
   }
