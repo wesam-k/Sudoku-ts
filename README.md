@@ -2,7 +2,7 @@
 
 
 ### Purpose 
-- [REACT,TS-Sudoku](https://app.netlify.com/sites/sudoko-react-ts/overview)
+- [REACT,TS-Sudoku netlify](https://app.netlify.com/sites/sudoko-react-ts/overview)
  I used  React, TypeScript, Styled-Components.
 
 
