@@ -23,9 +23,9 @@
 ### Usage
 
 ```
-npm start
+npm-scripts start or npm start
 
-npm run build
+react-scripts build
 ```
   
 
