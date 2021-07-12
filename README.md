@@ -1,7 +1,7 @@
  # Sudoku Game
    In this game, I tried to use Typescript to fix all bugs without disabled any correct from TS.created by Reactjs and Typescript with Styled-Components to render style.
 
-⚡ [Demo](https://app.netlify.com/sites/sudoko-react-ts/overview)
+⚡ [Demo](https://sudoko-react-ts.netlify.app/)
 
 <br/>
 
